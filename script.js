@@ -1,6 +1,7 @@
 // Blank Cheque //
 //   (c) 2022   //
-//THEKI LLECTIVE// 
+// Thank you to //
+// collaborators//
 const storyBox = document.getElementById("story");
 const resultBox = document.getElementById("result");
 const Parser = {};
@@ -89,6 +90,7 @@ Parser.LoadStory = function(b) {
     // the previously mentioned process, see the description of
     // Parser.ParseArray(). The original story is encoded in Base64
     // for data condensing and ease of sharing.
+    Parser.Reset();
     const json = JSON.parse(atob(b));
     Parser.LoadedStory = json; // is this necessary?
     Parser.ParseArray(Parser.LoadedStory);
@@ -96,6 +98,11 @@ Parser.LoadStory = function(b) {
     btn.type = "submit";
     btn.value = "storrelate";
     storyBox.appendChild(btn);
+}
+Parser.Reset = function() {
+  Parser.LoadedStory = null;
+  Parser.Inputs = [];
+  resultBox.innerHTML = "";
 }
 
 const WordType = {
@@ -140,28 +147,5 @@ function DebugParse(p) {
     // Parse an example story and load it into memory.
     const spungler = btoa(JSON.stringify(p));
     Parser.LoadStory(spungler);
+    return spungler;
 }
-DebugParse([
-    {w:WordType.PRNOUN},
-    " (born ",
-    {w:WordType.TIME},
-    ") is ",
-    "an ",
-    {w:WordType.ADJ},
-    " podcaster and former ",
-    {w:WordType.NOUN},
-    " known under the stage name FPS",
-    {w:WordType.PLACE,d:"one word"},
-    ". His YouTube channel features them portraying the ",
-    {w:WordType.ADJ},
-    " role of ",
-    {w:WordType.PRNOUN},
-    ", ",
-    "an ",
-    {w:WordType.ADV},
-    " ",
-    {w:WordType.ADJ},
-    " \"professional ",
-    {w:WordType.ADJ,d:"nationality"},
-    "\" from Moscow, Russia. His videos center around the usage of large amounts of firearms and explosives."
-])
