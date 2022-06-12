@@ -13,7 +13,7 @@ Parser.CreateStoryElement = function(wordlet, id) {
     const el = document.createElement("div")
     // For more information on what these single-letter parameters mean, 
     // consult the readme!
-    el.innerHTML = `<b>${wordlet.t ? wordlet.t + " " + wordlet.w.descriptor.toLowerCase() : wordlet.w.descriptor}${wordlet.e ? " ending in \"-"+wordlet.e + "\"" : ""}</b>: <input type="${wordlet.w.descriptor == WordType.NUM.descriptor ? "number" : "text"}" class="textinput" id="input-${id}" required/><br />`;
+    el.innerHTML = `<b>${wordlet.t ? wordlet.t + " " + wordlet.w.descriptor.toLowerCase() : wordlet.w.descriptor}${wordlet.e ? " ending in \"-"+wordlet.e + "\"" : ""}${wordlet.d ? ", " + wordlet.d : ""}</b>: <input type="${wordlet.w.descriptor == WordType.NUM.descriptor ? "number" : "text"}" class="textinput" id="input-${id}" required/><br />`;
     el.style.display = "inline";
     storyBox.appendChild(el);
     return el; // This isn't used, but can be useful for debugging and later applications
@@ -105,6 +105,9 @@ const WordType = {
     },
     NUM: {
         descriptor: "Number"
+    },
+    PLACE: {
+        descriptor: "<u class=\"tooltip\" title=\"e.g. Mars, Akihabara, my house\">Place</u>"
     }
 };
 
@@ -117,26 +120,14 @@ function DebugParse(p) {
     Parser.LoadStory(spungler);
 }
 DebugParse([
-    "Would you ",
-    {
-        w: WordType.VERB
-    },
-    " this ",
-    {
-        w: WordType.NOUN
-    },
-    " if they were ",
-    {
-        w: WordType.ADJ
-    },
-    " and they ",
-    {
-        w: WordType.VERB,
-        t: "Past tense"
-    },
-    " their ",
-    {
-        w: WordType.PLNOUN
-    },
-    " for you?"
+    {w:WordType.PRNOUN},
+    " (born ",
+    {w:WordType.TIME},
+    ") is an ",
+    {w:WordType.ADJ},
+    " podcaster and former ",
+    {w:WordType.NOUN},
+    " known under the stage name FPS",
+    {w:WordType.PLACE,d:"one word"},
+    ". His YouTube channel features Myers portraying the fictional role of Dimitri Potapoff, a heavily accented \"professional Russian\" from Moscow, Russia. His videos center around the usage of large amounts of firearms and explosives."
 ])
