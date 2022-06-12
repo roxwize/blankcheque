@@ -21,4 +21,11 @@ It's just an array of sentences, except areas where blanks are supposed to be ar
 |t          | The tense of the word in the form of a string; can also be used as a prefix |
 |d          | Any additional information about the word goes here                         |
 
-Note that **spaces are not automatically appended to the ends of words**. You have to put them in yourself.
+Note that **spaces are not automatically appended to the ends of words**. You have to put them in yourself. Another thing to remember is that if a story has the word "a" or "an" followed by a blank, separate the word like this:
+```js
+"Hi. I am ",
+"an ",
+{w:WordType.NOUN}
+```
+You must replace the a/an with "an ", space included.
+
