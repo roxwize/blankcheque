@@ -1,5 +1,56 @@
+@font-face { font-family: "Montserrat"; src: url('Montserrat-Regular.tff'); } 
+@font-face { font-family: "Montserrat"; src: url('Montserrat-Bold.ttf'); font-weight: bold; } 
+@font-face { font-family: "Montserrat"; src: url('Montserrat-Italic.ttf'); font-weight: italic; } 
+@font-face { font-family: "Montserrat"; src: url('Montserrat-BoldItalic.ttf'); font-weight: bold; font-style: italic; } 
+
+body {
+	font-family: "Montserrat";
+	background-color: gray;
+}
+  
+h1 { text-align: center; color: white; }
+  
+input { 
+	margin-left: 5px; 
+	border-style: solid; 
+	border-color: black; 
+	border-width: 0.4px; 
+	background-color: white;
+	margin-bottom: 0.3em;
+	}
+
 .tooltip {
   cursor: help;
   text-decoration-style: dotted;
   text-decoration-thickness: 1px;
+}
+  
+.userContainer {
+	margin: 0 auto;
+	width: 50%;
+	background-color: darkgray;
+	border-style: solid;
+	border-width: 1px;
+	border-color: white;
+	text-align: center;
+  }
+  
+#story {
+  padding: 2em;
+  margin: auto;
+  }
+  
+input[type="submit"] {
+  border: 0px solid black;
+  padding: 1em;
+  margin-top: 0.5em;
+  background: rgb(221,221,221);
+  background: linear-gradient(180deg, rgba(221,221,221,1) 0%, rgba(181,181,181,1) 100%);
+  transition: 0.2s;
+}
+
+input[type="submit"]:hover {
+  border: 2px solid black;
+  background: rgb(181,181,181);
+  background: linear-gradient(180deg, rgba(181,181,181,1) 0%, rgba(221,221,221,1) 100%);
 }
