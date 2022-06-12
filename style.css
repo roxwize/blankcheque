@@ -1,22 +1,27 @@
 @font-face { font-family: "Montserrat"; src: url('Montserrat-Regular.tff'); } 
-@font-face { font-family: "Montserrat"; src: url('Montserrat-Bold.ttf'); font-weight: bold; } 
+@font-face { font-family: "Montserrat"; src: url('Montserrat-Bold.ttf'); font-weight: normal; } 
 @font-face { font-family: "Montserrat"; src: url('Montserrat-Italic.ttf'); font-weight: italic; } 
-@font-face { font-family: "Montserrat"; src: url('Montserrat-BoldItalic.ttf'); font-weight: bold; font-style: italic; } 
+@font-face { font-family: "Montserrat"; src: url('Montserrat-BoldItalic.ttf'); font-weight: lighter; font-style: italic; } 
 
 body {
 	font-family: "Montserrat";
-	background-color: gray;
+	background-color: white;
 }
   
-h1 { text-align: center; color: white; }
+h1 { 
+	text-align: center;
+	color: #2e6dff;
+	font-size: 20px;
+	margin: 50px;
+}
   
 input { 
 	margin-left: 5px; 
-	border-style: solid; 
 	border-color: black; 
 	border-width: 0.4px; 
 	background-color: white;
 	margin-bottom: 0.3em;
+	border-radius: 5px;
 	}
 
 .tooltip {
@@ -26,13 +31,18 @@ input {
 }
   
 .userContainer {
+	-webkit-box-shadow: 2px 14px 31px 2px rgba(126, 126, 126, 0.45);
+-moz-box-shadow: 2px 14px 31px 2px rgba(126, 126, 126, 0.45);
+box-shadow: 2px 14px 31px 2px rgba(126, 126, 126, 0.45);
 	margin: 0 auto;
 	width: 50%;
+	border-radius: 5px;
 	background-color: darkgray;
 	border-style: solid;
 	border-width: 1px;
 	border-color: white;
 	text-align: center;
+	background-color: white;
   }
   
 #story {
@@ -41,16 +51,34 @@ input {
   }
   
 input[type="submit"] {
-  border: 0px solid black;
   padding: 1em;
   margin-top: 0.5em;
-  background: rgb(221,221,221);
-  background: linear-gradient(180deg, rgba(221,221,221,1) 0%, rgba(181,181,181,1) 100%);
+  background: #2e6dff;
+  color: white;
+  	-webkit-box-shadow: 2px 14px 31px 2px rgba(126, 126, 126, 0.45);
+-moz-box-shadow: 2px 14px 31px 2px rgba(126, 126, 126, 0.45);
+box-shadow: 2px 14px 31px 2px rgba(126, 126, 126, 0.45);
   transition: 0.2s;
 }
 
 input[type="submit"]:hover {
-  border: 2px solid black;
-  background: rgb(181,181,181);
-  background: linear-gradient(180deg, rgba(181,181,181,1) 0%, rgba(221,221,221,1) 100%);
+  padding: 1em;
+  margin-top: 0.5em;
+  background: #759fff;
+  color: white;
+-webkit-box-shadow: -1px -1px 9px -1px rgba(126, 126, 126, 0.45);
+-moz-box-shadow: -1px -1px 9px -1px rgba(126, 126, 126, 0.45);
+box-shadow: -1px -1px 9px -1px rgba(126, 126, 126, 0.45);
+  transition: 0.2s;
+}
+
+
+#result {
+ text-align: left;
+ font-size: 13px;
+ margin: 20px;
+}
+
+button {
+	border: none;
 }
