@@ -2,6 +2,7 @@
 //   (c) 2022   //
 //THEKI LLECTIVE// 
 const storyBox = document.getElementById("story");
+const resultBox = document.getElementById("result");
 const Parser = {};
 
 Parser.LoadedStory = [];
@@ -28,7 +29,7 @@ Parser.CreateText = function(input, bold = false) {
         text = document.createElement("strong");
     }
     text.innerHTML = input;
-    storyBox.appendChild(text);
+    resultBox.appendChild(text);
 }
 Parser.ParseArray = function(array) {
     // This function loops through all of the word blanks and creates
@@ -50,6 +51,7 @@ Parser.Storrelate = function() {
     // This takes all of the user's inputs and constructs the final
     // story out of them. This entire function is subject to drastic
     // change as the layout of the webpage changes.
+    resultBox.innerHTML = "";
     for (let i = 0; i < Parser.LoadedStory.length; i++) {
         if (typeof Parser.LoadedStory[i] === 'object') {
             Parser.CreateText(Parser.Inputs[i].value, true);
