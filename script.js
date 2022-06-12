@@ -1,9 +1,11 @@
 // Blank Cheque //
 //   (c) 2022   //
-// Thank you to //
+// Thank you to // 
 // collaborators//
 const storyBox = document.getElementById("story");
 const resultBox = document.getElementById("result");
+const titleHeading = document.getElementById("title");
+const authorHeading = document.getElementById("author");
 const Parser = {};
 
 Parser.AnAgreement = function(nextLetter) {
@@ -92,7 +94,9 @@ Parser.LoadStory = function(b) {
     // for data condensing and ease of sharing.
     Parser.Reset();
     const json = JSON.parse(atob(b));
-    Parser.LoadedStory = json; // is this necessary?
+    Parser.LoadedStory = json.data; // is this necessary?
+    titleHeading.innerHTML = json.title;
+    authorHeading.innerHTML = "by " + json.author;
     Parser.ParseArray(Parser.LoadedStory);
     const btn = document.createElement("input");
     btn.type = "submit";
@@ -149,3 +153,12 @@ function DebugParse(p) {
     Parser.LoadStory(spungler);
     return spungler;
 }
+DebugParse({
+  data:[
+    "I like ",
+    {w:WordType.PLNOUN},
+    " ahahahaha!!!"],
+  title: "Guys story",
+  author: "theki"
+});
+// Maybe make a date published timestamp

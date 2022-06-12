@@ -9,10 +9,17 @@ body {
 }
   
 h1 { 
+	font-size: 20px;
+}
+
+h2 {
+  font-size: 15px;
+}
+
+h1, h2 {
 	text-align: center;
 	color: #2e6dff;
-	font-size: 20px;
-	margin: 50px;
+	margin: 25px;
 }
   
 input { 
