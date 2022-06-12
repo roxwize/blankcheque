@@ -8,13 +8,14 @@
 </head>
 
 <body>
-  <h1>Blank cheque development</h1>
+  <h1 id="title">Blank cheque development</h1>
   <div class="userContainer">
-  <!--
-  <textarea style="width: 17px; height: 17px;"></textarea><button onclick="DebugParse(testStory)">Go</button>
-  -->
   <form id="story" onsubmit="return Parser.Storrelate()"></form>
   <div id="result"></div>
+  <div id="stories">
+    <button onclick="Parser.LoadStory('W3sidyI6eyJkZXNjcmlwdG9yIjoiUHJvcGVyIG5vdW4ifX0sIiAoYm9ybiAiLHsidyI6eyJkZXNjcmlwdG9yIjoiPHUgY2xhc3M9XCJ0b29sdGlwXCIgdGl0bGU9XCJlLmcuIHllc3RlcmRheSwgTWF5IDI1LCBhIHllYXIgYWdvXCI+VGltZSBmcmFtZTwvdT4ifX0sIikgaXMgIiwiYW4gIix7InciOnsiZGVzY3JpcHRvciI6IkFkamVjdGl2ZSJ9fSwiIHBvZGNhc3RlciBhbmQgZm9ybWVyICIseyJ3Ijp7ImRlc2NyaXB0b3IiOiJOb3VuIn19LCIga25vd24gdW5kZXIgdGhlIHN0YWdlIG5hbWUgRlBTIix7InciOnsiZGVzY3JpcHRvciI6Ijx1IGNsYXNzPVwidG9vbHRpcFwiIHRpdGxlPVwiZS5nLiBNYXJzLCBBa2loYWJhcmEsIG15IGhvdXNlXCI+UGxhY2U8L3U+In0sImQiOiJvbmUgd29yZCJ9LCIuIEhpcyBZb3VUdWJlIGNoYW5uZWwgZmVhdHVyZXMgdGhlbSBwb3J0cmF5aW5nIHRoZSAiLHsidyI6eyJkZXNjcmlwdG9yIjoiQWRqZWN0aXZlIn19LCIgcm9sZSBvZiAiLHsidyI6eyJkZXNjcmlwdG9yIjoiUHJvcGVyIG5vdW4ifX0sIiwgIiwiYW4gIix7InciOnsiZGVzY3JpcHRvciI6IkFkdmVyYiJ9fSwiICIseyJ3Ijp7ImRlc2NyaXB0b3IiOiJBZGplY3RpdmUifX0sIiBcInByb2Zlc3Npb25hbCAiLHsidyI6eyJkZXNjcmlwdG9yIjoiQWRqZWN0aXZlIn0sImQiOiJuYXRpb25hbGl0eSJ9LCJcIiBmcm9tICIseyJ3Ijp7ImRlc2NyaXB0b3IiOiI8dSBjbGFzcz1cInRvb2x0aXBcIiB0aXRsZT1cImUuZy4gTWFycywgQWtpaGFiYXJhLCBteSBob3VzZVwiPlBsYWNlPC91PiJ9fSwiLiBUaGVpciAiLHsidyI6eyJkZXNjcmlwdG9yIjoiTm91biAoUGx1cmFsKSJ9fSwiIGNlbnRlciBhcm91bmQgdGhlIHVzYWdlIG9mIGxhcmdlIGFtb3VudHMgb2YgIix7InciOnsiZGVzY3JpcHRvciI6Ik5vdW4gKFBsdXJhbCkifX0sIiBhbmQgIix7InciOnsiZGVzY3JpcHRvciI6Ik5vdW4gKFBsdXJhbCkifX0sIi4iXQ==')">load story FpsRussia</button>
+    <button onclick="Parser.LoadStory('WyJHZWFueSBpcyAiLCJhbiAiLHsidyI6eyJkZXNjcmlwdG9yIjoiQWRqZWN0aXZlIn19LCIgYW5kIG9wZW4tc291cmNlICIseyJ3Ijp7ImRlc2NyaXB0b3IiOiJBZGplY3RpdmUifX0sIiBHVUkgIix7InciOnsiZGVzY3JpcHRvciI6Ik5vdW4ifX0sIiBlZGl0b3IgdXNpbmcgIix7InciOnsiZGVzY3JpcHRvciI6IlByb3BlciBub3VuIn0sImQiOiJhY3JvbnltIn0sIiBhbmQgR1RLLCBpbmNsdWRpbmcgIix7InciOnsiZGVzY3JpcHRvciI6IkFkamVjdGl2ZSJ9fSwiICIseyJ3Ijp7ImRlc2NyaXB0b3IiOiJOb3VuIn19LCIgZmVhdHVyZXMuIl0=')">Load story Geany</button>
+  </div>
   <script src="script.js"></script>
   <br>
   </div>
