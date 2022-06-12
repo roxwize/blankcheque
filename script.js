@@ -5,6 +5,23 @@ const storyBox = document.getElementById("story");
 const resultBox = document.getElementById("result");
 const Parser = {};
 
+Parser.AnAgreement = function(nextLetter) {
+  let ltr;
+  switch(nextLetter) {
+    case "a":
+    case "e":
+    case "i":
+    case "o":
+    case "u":
+      ltr = "an ";
+      break;
+    default:
+      ltr = "a ";
+      break;
+  }
+  return ltr;
+}
+
 Parser.LoadedStory = [];
 Parser.Inputs = [];
 Parser.CreateStoryElement = function(wordlet, id) {
@@ -54,9 +71,14 @@ Parser.Storrelate = function() {
     resultBox.innerHTML = "";
     for (let i = 0; i < Parser.LoadedStory.length; i++) {
         if (typeof Parser.LoadedStory[i] === 'object') {
-            Parser.CreateText(Parser.Inputs[i].value, true);
+          Parser.CreateText(Parser.Inputs[i].value, true);
         } else {
-            Parser.CreateText(Parser.LoadedStory[i]);
+          let textToAdd = Parser.LoadedStory[i]
+          // Change "a" to "an" if necessary
+          if (textToAdd == "an ") {
+            textToAdd = Parser.AnAgreement(Parser.Inputs[i+1].value.split('')[0]);
+          }
+          Parser.CreateText(textToAdd);
         }
     }
     return false;
@@ -101,7 +123,7 @@ const WordType = {
         descriptor: "Noun (Plural)"
     },
     TIME: {
-        descriptor: "<u class=\"tooltip\" title=\"e.g. yesterday, today, a year ago\">Time frame</u>" // Maybe attribute help tooltips to a parameter?
+        descriptor: "<u class=\"tooltip\" title=\"e.g. yesterday, May 25, a year ago\">Time frame</u>" // Maybe attribute help tooltips to a parameter?
     },
     NUM: {
         descriptor: "Number"
@@ -123,11 +145,23 @@ DebugParse([
     {w:WordType.PRNOUN},
     " (born ",
     {w:WordType.TIME},
-    ") is an ",
+    ") is ",
+    "an ",
     {w:WordType.ADJ},
     " podcaster and former ",
     {w:WordType.NOUN},
     " known under the stage name FPS",
     {w:WordType.PLACE,d:"one word"},
-    ". His YouTube channel features Myers portraying the fictional role of Dimitri Potapoff, a heavily accented \"professional Russian\" from Moscow, Russia. His videos center around the usage of large amounts of firearms and explosives."
+    ". His YouTube channel features them portraying the ",
+    {w:WordType.ADJ},
+    " role of ",
+    {w:WordType.PRNOUN},
+    ", ",
+    "an ",
+    {w:WordType.ADV},
+    " ",
+    {w:WordType.ADJ},
+    " \"professional ",
+    {w:WordType.ADJ,d:"nationality"},
+    "\" from Moscow, Russia. His videos center around the usage of large amounts of firearms and explosives."
 ])
