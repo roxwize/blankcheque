@@ -44,12 +44,11 @@ box-shadow: 2px 14px 31px 2px rgba(126, 126, 126, 0.45);
 	margin: 0 auto;
 	width: 50%;
 	border-radius: 5px;
-	background-color: darkgray;
+	background-color: white;
 	border-style: solid;
 	border-width: 1px;
 	border-color: white;
 	text-align: center;
-	background-color: white;
   }
   
 #story {
@@ -57,26 +56,24 @@ box-shadow: 2px 14px 31px 2px rgba(126, 126, 126, 0.45);
   margin: auto;
   }
   
-input[type="submit"] {
+input[type="submit"], button {
   padding: 1em;
   margin-top: 0.5em;
   background: #2e6dff;
   color: white;
-  	-webkit-box-shadow: 2px 14px 31px 2px rgba(126, 126, 126, 0.45);
--moz-box-shadow: 2px 14px 31px 2px rgba(126, 126, 126, 0.45);
-box-shadow: 2px 14px 31px 2px rgba(126, 126, 126, 0.45);
+  box-shadow: 2px 14px 31px 2px rgba(126, 126, 126, 0.45);
   transition: 0.2s;
 }
 
 input[type="submit"]:hover {
-  padding: 1em;
-  margin-top: 0.5em;
   background: #759fff;
-  color: white;
--webkit-box-shadow: -1px -1px 9px -1px rgba(126, 126, 126, 0.45);
--moz-box-shadow: -1px -1px 9px -1px rgba(126, 126, 126, 0.45);
-box-shadow: -1px -1px 9px -1px rgba(126, 126, 126, 0.45);
+  color: inherit;
   transition: 0.2s;
+}
+  
+input[type="submit"]:hover, button:hover {
+    cursor: pointer;
+    box-shadow: -1px -1px 9px -1px rgba(189, 189, 189, 0.45);
 }
 
 
@@ -89,3 +86,78 @@ box-shadow: -1px -1px 9px -1px rgba(126, 126, 126, 0.45);
 button {
 	border: none;
 }
+
+#footer {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+/*@media (prefers-color-scheme: light) {*/
+/*  .userContainer {*/
+/*	  background-color: white;*/
+/*	  border-color: white;*/
+/*  }*/
+  
+/*  input[type="submit"] {*/
+/*    color: white; */
+/*    box-shadow: 2px 14px 31px 2px rgba(126, 126, 126, 0.45);*/
+/*  }*/
+  
+/*  input[type="submit"]:hover {*/
+/*    box-shadow: -1px -1px 9px -1px rgba(126, 126, 126, 0.45);*/
+/*  }*/
+  
+/*  body {*/
+/*    background-color: white;*/
+/*    color: black;*/
+/*  }*/
+/*}*/
+
+@media (prefers-color-scheme: dark) {
+  .userContainer {
+	  background-color: #303030;
+	  border-color: #303030;
+    box-shadow: 2px 14px 31px 2px rgba(46, 46, 46, 0.45);
+  }
+  
+  input {
+    background: #4a4a4a;
+    border: none;
+  }
+  
+  input[type="submit"], button {
+    padding: 1em;
+    margin-top: 0.5em;
+    color: white; 
+    box-shadow: none;
+    background: #7dbce3;
+    transition: 0.2s;
+  }
+  
+  input[type="submit"]:hover {
+    color: black;
+    background: #7dbce3;
+    transition: 0.2s;
+  }
+  
+  input[type="submit"]:hover, button:hover {
+    cursor: pointer;
+    box-shadow: none;
+  }
+  
+  h1, h2 {
+    color: #7dbce3;
+  }
+  
+  button {
+    background: #4a4a4a;
+    color: white;
+  }
+  
+  body {
+    background-color: #1c1c1c;
+    color: white;
+  }
+}
+
