@@ -29,6 +29,7 @@ input {
 	background-color: white;
 	margin-bottom: 0.3em;
 	border-radius: 5px;
+	padding: 1em;
 	}
 
 .tooltip {
@@ -124,14 +125,16 @@ button {
   input {
     background: #4a4a4a;
     border: none;
+    color: white;
+    padding: 1em;
   }
   
   input[type="submit"], button {
     padding: 1em;
     margin-top: 0.5em;
     color: white; 
-    box-shadow: none;
-    background: #7dbce3;
+    box-shadow: 0 2px 0 0 white;
+    background: #658ba3;
     transition: 0.2s;
   }
   
@@ -139,11 +142,17 @@ button {
     color: black;
     background: #7dbce3;
     transition: 0.2s;
+    box-shadow: none;
   }
   
   input[type="submit"]:hover, button:hover {
     cursor: pointer;
     box-shadow: none;
+  }
+  
+  button:hover {
+    color: black; 
+    background: #a0a0a0;
   }
   
   h1, h2 {
@@ -160,4 +169,3 @@ button {
     color: white;
   }
 }
-
